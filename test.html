@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #007bff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .container {
+            margin-top: 200px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .tabs {
+            display: flex;
+        }
+        .tab {
+            flex: 1;
+            padding: 10px;
+            cursor: pointer;
+            background: lightgray;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .tab.active {
+            background: white;
+            font-weight: bold;
+        }
+        .form {
+            padding: 20px;
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .form.active {
+            display: block;
+        }
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .form-group input,
+        .form-group select {
+            width: 48%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .captcha {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .submit-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" onclick="showForm('login')">Sign in</div>
+            <div class="tab" onclick="showForm('register')">New account</div>
+        </div>
+        
+        <div id="login" class="form active">
+            <h3>Public User Login Area</h3>
+            <input type="text" class="input-field" placeholder="Username">
+            <input type="password" class="input-field" placeholder="Password">
+            <button class="submit-btn">Login</button>
+            <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+        
+        <div id="register" class="form">
+            <h3>Personal Information</h3>
+            <div class="form-group">
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Middle Name">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Last Name">
+                <input type="text" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Mobile Number">
+                <input type="email" placeholder="Email Id">
+            </div>
+            <textarea class="input-field" placeholder="Enter Address"></textarea>
+            <div class="form-group">
+                <select class="input-field">
+                    <option value="">-- Select District --</option>
+                    <option value="ahmedabad">Ahmedabad</option>
+                    <option value="bengaluru">Bengaluru</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="hyderabad">Hyderabad</option>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="pune">Pune</option>
+                    <option value="jaipur">Jaipur</option>
+                    <option value="lucknow">Lucknow</option>
+                    <option value="bhopal">Bhopal</option>
+                    <option value="coimbatore">Coimbatore</option>
+                    <option value="chandigarh">Chandigarh</option>
+                    <option value="patna">Patna</option>
+                    <option value="indore">Indore</option>
+                    <option value="nagpur">Nagpur</option>
+                    <option value="visakhapatnam">Visakhapatnam</option>
+                    <option value="bhubaneswar">Bhubaneswar</option>
+                    <option value="guwahati">Guwahati</option>
+                    <option value="varanasi">Varanasi</option>
+                </select>
+                
+                <select class="input-field">
+                    <option value="">-- Select Tehsil --</option>
+                
+                    <!-- Karnataka -->
+                    <optgroup label="Karnataka">
+                        <option value="bengaluru-north">Bengaluru North</option>
+                        <option value="bengaluru-south">Bengaluru South</option>
+                        <option value="yelahanka">Yelahanka</option>
+                        <option value="hosakote">Hosakote</option>
+                        <option value="nelamangala">Nelamangala</option>
+                        <option value="mangalore">Mangalore</option>
+                        <option value="tumkur">Tumkur</option>
+                        <option value="mysore">Mysore</option>
+                    </optgroup>
+                
+                    <!-- Mumbai (Maharashtra) -->
+                    <optgroup label="Mumbai (Maharashtra)">
+                        <option value="andheri">Andheri</option>
+                        <option value="borivali">Borivali</option>
+                        <option value="dadar">Dadar</option>
+                        <option value="thane">Thane</option>
+                        <option value="kurla">Kurla</option>
+                        <option value="mulund">Mulund</option>
+                        <option value="chembur">Chembur</option>
+                        <option value="vasai">Vasai</option>
+                    </optgroup>
+                
+                    <!-- Gujarat -->
+                    <optgroup label="Gujarat">
+                        <option value="ahmedabad-city">Ahmedabad City</option>
+                        <option value="gandhinagar">Gandhinagar</option>
+                        <option value="surat">Surat</option>
+                        <option value="vadodara">Vadodara</option>
+                        <option value="rajkot">Rajkot</option>
+                        <option value="bhavnagar">Bhavnagar</option>
+                        <option value="jamnagar">Jamnagar</option>
+                        <option value="anand">Anand</option>
+                    </optgroup>
+                
+                    <!-- Top Districts of India -->
+                    <optgroup label="Top Districts in India">
+                        <!-- Delhi -->
+                        <option value="central-delhi">Central Delhi</option>
+                        <option value="south-delhi">South Delhi</option>
+                        <option value="west-delhi">West Delhi</option>
+                
+                        <!-- Uttar Pradesh -->
+                        <option value="lucknow">Lucknow</option>
+                        <option value="varanasi">Varanasi</option>
+                        <option value="kanpur">Kanpur</option>
+                
+                        <!-- Rajasthan -->
+                        <option value="jaipur">Jaipur</option>
+                        <option value="jodhpur">Jodhpur</option>
+                
+                        <!-- Tamil Nadu -->
+                        <option value="chennai">Chennai</option>
+                        <option value="coimbatore">Coimbatore</option>
+                
+                        <!-- Madhya Pradesh -->
+                        <option value="bhopal">Bhopal</option>
+                        <option value="indore">Indore</option>
+                    </optgroup>
+                </select>
+                
+            </div>
+            <select class="input-field">
+                <option value="">-- Select Village --</option>
+            
+                <!-- Karnataka -->
+                <optgroup label="Karnataka">
+                    <option value="dodda-aladha-mara">Dodda Aladha Mara (Bengaluru)</option>
+                    <option value="hebbal">Hebbal (Bengaluru)</option>
+                    <option value="mallapura">Mallapura (Mysore)</option>
+                    <option value="mudigere">Mudigere (Chikmagalur)</option>
+                    <option value="gonikoppal">Gonikoppal (Kodagu)</option>
+                    <option value="srirangapatna">Srirangapatna (Mandya)</option>
+                    <option value="kanakapura">Kanakapura (Ramanagara)</option>
+                </optgroup>
+            
+                <!-- Mumbai (Maharashtra) -->
+                <optgroup label="Mumbai (Maharashtra)">
+                    <option value="versova">Versova (Andheri)</option>
+                    <option value="dahisar">Dahisar (Borivali)</option>
+                    <option value="madh-island">Madh Island</option>
+                    <option value="uttan">Uttan (Thane)</option>
+                    <option value="palghar">Palghar (Vasai)</option>
+                    <option value="gorai">Gorai (Borivali)</option>
+                </optgroup>
+            
+                <!-- Gujarat -->
+                <optgroup label="Gujarat">
+                    <option value="adraj">Adraj (Ahmedabad)</option>
+                    <option value="palitana">Palitana (Bhavnagar)</option>
+                    <option value="gondal">Gondal (Rajkot)</option>
+                    <option value="anandpar">Anandpar (Jamnagar)</option>
+                    <option value="vadnagar">Vadnagar (Mehsana)</option>
+                    <option value="valsad">Valsad</option>
+                    <option value="dharampur">Dharampur</option>
+                </optgroup>
+            
+                <!-- Top Villages in India -->
+                <optgroup label="Top Villages in India">
+                    <option value="mawlynnong">Mawlynnong (Meghalaya) - Cleanest Village</option>
+                    <option value="mattur">Mattur (Karnataka) - Sanskrit Speaking Village</option>
+                    <option value="punsari">Punsari (Gujarat) - Smart Village</option>
+                    <option value="hiware-bazar">Hiware Bazar (Maharashtra) - Model Village</option>
+                    <option value="shani-shingnapur">Shani Shingnapur (Maharashtra) - Doorless Village</option>
+                    <option value="khonoma">Khonoma (Nagaland) - India's First Green Village</option>
+                </optgroup>
+            </select>
+            
+            <div class="form-group">
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
+            </div>
+            <input type="password" class="input-field" placeholder="Confirm Password">
+            <label><input type="checkbox"> I accept the terms and conditions</label>
+            <button class="submit-btn">Sign up</button>
+        </div>
+    </div>
+    
+    <script>
+        function showForm(formId) {
+            document.querySelectorAll('.form').forEach(form => form.classList.remove('active'));
+            document.getElementById(formId).classList.add('active');
+            
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelector(`[onclick="showForm('${formId}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

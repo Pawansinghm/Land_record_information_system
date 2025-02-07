@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin User Login</title>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: gray;
+            align-items: center; 
+            height: 100vh;
+        } 
+
+        .login-container {
+            margin-top: 125px;
+            margin-left: 450px;
+            background: white;
+            width: 350px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-header {
+            background: #d3d3d3;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .login-form {
+            padding: 20px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 40px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+
+        .captcha {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .captcha img {
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        .captcha input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 16px;
+        }
+
+        .login-btn {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <div class="login-container">
+        <div class="login-header">
+            Sign in (Department User)
+        </div>
+        <div class="login-form">
+            <div class="input-group">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" placeholder="Username">
+            </div>
+            <div class="input-group">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Password">
+            </div>
+            <button class="login-btn">Login</button>
+            <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+    </div>
+
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>
